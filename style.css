@@ -1,6 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand', cursive;
 }
 
 body {
@@ -12,6 +18,7 @@ body {
     background-color: salmon;
     position: fixed;
     border-bottom: 2px solid black;
+    z-index: 3;
 }
 
 #navbar ul {
@@ -83,9 +90,23 @@ body {
 }
 
 .project-tile {
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 5px;
+    transition: 0.4s ease;
 }
+
+.project-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.2rem 13px grey;
+    z-index: 1;
+}
+
+.project-tile h1 {
+    background-color: #3498db;
+    border-top: 3px solid black;
+    transition: 1s;
+}
+
 
 img {
     width: 300px;
@@ -94,6 +115,11 @@ img {
 @media only screen and (max-width: 700px) {
     #projects ul {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .project-tile {
+        width: 50%;
     }
 
     img {
